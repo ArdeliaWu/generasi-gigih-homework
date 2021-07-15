@@ -1,6 +1,6 @@
-.App {
-  text-align: left;
-}
+/* .App {
+  text-align: center;
+} */
 
 /* .App-logo {
   height: 40vmin;
@@ -41,12 +41,18 @@ h1{
 }
 
 .playlist{
+  width: auto;
+  height: auto;
   border: 0.5px 0.5px;
   border-style:solid;
+  border-radius: 2mm;
+  border-color:chocolate;
   margin: 25px 20px;
-  padding: 10px 10px;
+  padding: 15px 15px;
   background-color: antiquewhite;
+  align-items: left;
 }
+
 .container{
-  position: left;
+  align-items: left;
 }
