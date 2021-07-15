@@ -1,9 +1,11 @@
 //import logo from './logo.svg';
-import data from './playlistdata';
+//import data from './playlistdata';
 import './App.css';
+import MyComponent from './components/home/index.js';
 function App() {
   return (
     <div className="App">
+      <MyComponent />
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -19,7 +21,7 @@ function App() {
         </a>
       </header> */}
 
-      <h1>Create Playlist</h1>
+      {/* <h1>Create Playlist</h1>
       <div className="playlist">
         <div className="container">
           <img className="trackCover" src={data.album.images[1].url} alt="Track Cover" />
@@ -28,7 +30,9 @@ function App() {
           <p calssName="albumName">Album : {data.album.name}</p>
           <button id="submit">select</button>
         </div>
-      </div>
+      </div> */}
+
+
 
     </div>
   );
