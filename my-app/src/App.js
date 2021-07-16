@@ -1,5 +1,5 @@
 //import logo from './logo.svg';
-//import data from './playlistdata';
+
 import './App.css';
 import MyComponent from './components/home/index.js';
 function App() {
