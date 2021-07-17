@@ -54,5 +54,7 @@ h1{
 }
 
 .container{
-  align-items: left;
+  width: auto;
+  height: auto;
+  align-items: center;
 }

@@ -1,0 +1,7 @@
+.tblRow{
+    padding: 1.5px 1.5px;
+    border-bottom: 0.5px;
+    border-style:dotted;
+    border-color:chocolate;
+    display:flex;
+}

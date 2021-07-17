@@ -2,19 +2,34 @@ import React, { Component } from 'react';
 import MyImage from './image/Image.js';
 import PlaylistDetail from './playlistDetail/Detail';
 import data from './playlistdata';
+import './index.css';
 
+const PlaylistData = data.map((track) => {
+  return (
+    <tr className="tblRow">
+      <div className="container">
+        <MyImage url={track.album.images[1].url} />
+        <PlaylistDetail
+          title={track.name}
+          artistName={track.artists[0].name}
+          albumName={track.album.name}
+        />
+        <button id="submit">select</button>
+      </div>
+    </tr>
+  );
+
+});
 
 class MyComponent extends Component {
   render() {
     return (
-      <div class="container">
-        <MyImage url={data.album.images[1].url} />
-        <PlaylistDetail
-          title={data.name}
-          artistName={data.artists[0].name}
-          albumName={data.album.name}
-        />
-        <button id="submit">select</button>
+      <div>
+        <table>
+          <tbody>
+            {PlaylistData}
+          </tbody>
+        </table>
       </div>
     );
   }
