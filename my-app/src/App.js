@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <h1>Create Playlist</h1>
       <div className="playlist">
-        <div class="container">
+        <div className="container">
           <MyComponent />
         </div>
       </div>
