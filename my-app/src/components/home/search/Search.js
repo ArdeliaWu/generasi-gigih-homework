@@ -10,6 +10,7 @@ const MySearch = () => {
 
     const handleChange = (event) => setSearchtxt(event.target.value);
     const handleClick = async () => {
+        // console.log("Ok");
         try {
             const response = await axios
                 .get("https://api.giphy.com/v1/gifs/search?", {
@@ -39,10 +40,10 @@ const MySearch = () => {
             <input className="searchBar" type="text" placeholder="search" value={Searchtxt} onChange={handleChange} />
             <button className="searchBtn" onClick={handleClick}>search</button>
             {
-                data.hits.map(result => {
-                    console.log(result.data);
+                data.hits.map(gif => {
+                    console.log(gif.data);
                     return (
-                        <GifImage src={result.url} alt="gifs" key={result.id} />
+                        <GifImage src={gif.url} alt="gifs" key={gif.id} />
                     );
                 })
             }
