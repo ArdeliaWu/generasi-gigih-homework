@@ -1,12 +1,8 @@
-import React from 'react'
-
-
-
-const MyImage = (props) => {
+const GifImage = (props) => {
   return (
     <div>
-      <img src={props.url} alt="a gif" />
+      <img src={props.url} key={props.key} alt="a gif" />
     </div>
   );
 }
-export default MyImage;
+export default GifImage;
