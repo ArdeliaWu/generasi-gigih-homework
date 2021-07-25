@@ -1,38 +1,20 @@
 import React, { useState } from 'react';
 import GifImage from '../image/Image.js';
-import axios from 'axios';
+//import axios from 'axios';
 
-const ApiKey = process.env.REACT_APP_GIF_KEY;
+const apiKey = process.env.REACT_APP_GIF_KEY;
 const MySearch = () => {
     //define state
     const [Searchtxt, setSearchtxt] = useState(" ");
-    const [data, setData] = useState({ hits: [] });
+    const [Gifdata, setGifdata] = useState([]);
 
     const handleChange = (event) => setSearchtxt(event.target.value);
+
     const handleClick = async () => {
-        // console.log("Ok");
-        try {
-            const response = await axios
-                .get("https://api.giphy.com/v1/gifs/search?", {
-                    params: {
-                        api_key: ApiKey,
-                        q: Searchtxt,
-                        limit: 12,
-                    },
-                })
-            if (!response.ok) {
-                throw Error(response.statusText);
-            }
-
-            const result = await response.json();
-            setData({ data: result });
-
-        }
-
-        catch (error) {
-            console.log("error");
-        }
-        return (data);
+        const data = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${Searchtxt}&limit=12`)
+            .then(response => response.json());
+        setGifdata(data);
+        //console.log(gifData);
     }
 
     return (
@@ -40,12 +22,12 @@ const MySearch = () => {
             <input className="searchBar" type="text" placeholder="search" value={Searchtxt} onChange={handleChange} />
             <button className="searchBtn" onClick={handleClick}>search</button>
             {
-                data.hits.map(gif => {
-                    console.log(gif.data);
+                Gifdata.map((gif) => {
                     return (
-                        <GifImage src={gif.url} alt="gifs" key={gif.id} />
+                        <GifImage url={gif.images.original.url} alt="gifs" key={gif.id} title={gif.title} />
                     );
-                })
+                }
+                )
             }
         </div>
     );
