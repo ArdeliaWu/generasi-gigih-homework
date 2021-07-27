@@ -1,8 +1,10 @@
+import './Image.css';
+
 const GifImage = (props) => {
   return (
-    <div>
+    <div className="Giflist">
       <h1>{props.title}</h1>
-      <img src={props.url} key={props.key} alt="a gif" />
+      <img src={props.url} alt="a gif" />
     </div>
   );
 }

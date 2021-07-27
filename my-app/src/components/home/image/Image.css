@@ -1,0 +1,18 @@
+.Giflist {
+    display: block;
+    float: left;
+    width: 300px;
+    height: 300px;
+    margin: 10px 10px;;
+}
+
+.Giflist img{
+    width: 250px;
+    height: 250px;;
+}
+
+.Giflist h1{
+    padding : 10px;
+    text-align: center;
+    font-size: medium;
+}
