@@ -5,12 +5,13 @@ import MyComponent from './components/home/index.js';
 function App() {
   return (
     <div className="App">
-      <h1>Create Playlist</h1>
+      <MyComponent />
+      {/* <h1>Create Playlist</h1>
       <div className="playlist">
         <div class="container">
-          <MyComponent />
+          
         </div>
-      </div>
+      </div> */}
 
     </div>
   );
